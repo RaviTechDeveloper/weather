@@ -1,0 +1,61 @@
+h1{
+    text-align:center ;
+   background-color: white;
+    margin: auto;
+}
+body{
+   background-color: rgb(94, 158, 221);
+   /* border-color: red; */
+}
+ /* div  {
+
+    text-align: center;
+ 
+} */
+#container{ 
+    display: block;
+    margin: 200px 15px 40px 20px;
+    background-origin: padding-box;
+    padding: 22px;
+     /* border-color: red;  */
+     /* border: 5px  rgb(114, 55, 22,50;)  */
+     border-color: red;
+    border-radius: 50px;
+    background-color: white; 
+
+   
+}
+
+.temp{
+    color:black;
+    
+}
+.cloud{
+    font-size: 20px;
+   
+}
+.wind{
+    font-size: 20px;
+    
+}
+.humidity{
+    font-size: 20px;
+  
+}
+
+.city{
+    display: inline;
+    font-size: 25px;
+}
+.date{
+    display: inline;
+    text-align: right;
+    margin-right: 2px;
+    font-size: 20px
+    /* right: auto; */
+}
+#cityalign{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}

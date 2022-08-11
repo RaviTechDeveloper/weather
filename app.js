@@ -7,7 +7,11 @@
 // weatherdata()
 // // fetch('http://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad172520220108&q=Indore&aqi=no')
 // // .then(x=>console.log(x.json()));
-fetch('http://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad172520220108&q=rewa&aqi=no')
+
+function getWeather(city){
+  let url = 'https://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad172520220108&q='+city+'&aqi=no'
+  console.log(url)
+  fetch(url)
   .then((response) => {
     return response.json();
   })
@@ -15,6 +19,7 @@ fetch('http://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad17252022
     console.log(myJson);
     let date =myJson["current"]["last_updated"]
     let temp =myJson["current"]["temp_c"]
+    console
     let name =myJson["location"]["name"]
     let region =myJson["location"]["region"]
     let country =myJson["location"]["country"]
@@ -26,26 +31,26 @@ fetch('http://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad17252022
     
     
 
-    console.log(date)
-    console.log(temp)
-    console.log(name)
-    console.log(region)
-    console.log(country)
-    console.log(cloud)
-    console.log(wind)
-    console.log(humidity)
-    console.log(weatherstatus)
+    // console.log(date)
+    // console.log(temp)
+    // console.log(name)
+    // console.log(region)
+    // console.log(country)
+    // console.log(cloud)
+    // console.log(wind)
+    // console.log(humidity)
+    // console.log(weatherstatus)
 
     let showcity = document.getElementsByClassName("city")
     // showcity[0].innerHTML =`${name}<div class = \"date\"></div>`
     showcity[0].innerHTML = "<i class=\"fa-solid fa-location-dot\"></i> &nbsp" + name + ", "  +region + ", "  +country
-    console.log(showcity)
+    // console.log(showcity)
     let showdate = document.getElementsByClassName("date")
     showdate[0].innerText = date
     // console.log(showdate)
     let showtemp = document.getElementById("temp")
     showtemp.innerText = temp +"°C"
-    console.log(showtemp)
+    // console.log(showtemp)
     // let showregion = document.getElement sByClassName("region")
     // showregion[0].innerText = region
     // let showcountry = document.getElementsByClassName("country")
@@ -66,11 +71,24 @@ fetch('http://api.weatherapi.com/v1/current.json?key=1b412d654b8a47ccbad17252022
       // console.log(formElement);
 
     
-  });
+  })
+};
+ 
   // let x = document.getElementById("search")
   // console.log(x.value)
 
-  function showvalue(){
-    let formElement =document.getElementsByClassName('s')
-    console.log(formElement[0].value);
+  // function showvalue(){
+  //   let formElement =document.getElementsByClassName('s')
+  //   console.log(formElement[0].value);
+  // }
+
+  function showWeather(e){
+    // console.log(e);
+    // e.preventDefault();
+    let searchCity =document.getElementById('search')
+    // console.log(searchCity.value);
+    getWeather(String(searchCity.value));
   }
+
+  // showWeather()
+  getWeather('rewa')

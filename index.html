@@ -13,8 +13,13 @@
 
 <body>
     <div id="container">
-        <input class ="s" id="search" oninput="showvalue()">
-        <input type="submit" value="submit">
+        <form onsubmit="showWeather(event.preventDefault())">
+            <input class ="s" id="search" type="text">
+            <button type="submit">submit</button>
+            
+        </form>
+        <!-- <input class ="s" id="search" oninput="showvalue()"> -->
+        <!-- <input type="submit" value="submit"> -->
         <h1>Today is Weather</h1>
         <br>
        
